@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+       <h:form>            
+           <h2>Új szám felvitele:</h2>
+           <hr></hr>
+             Telefon Szám:
+             <h:inputText value="#{kontaktLista.newPhone.number}"/><br/>    
+             Típus:
+             <h:inputText value="#{kontaktLista.newPhone.type}"/><br/>
+              
+             
+             <h:selectOneMenu id="list2" value="#{kontaktLista.contacts}">
+                <f:selectItem itemLabel="Válaszz..." itemValue="#{null}" />
+                <f:selectItems value="#{kontaktLista.contacts}" />
+            </h:selectOneMenu>
+             
+             <h:outputText value="#{kontaktLista.hiba}" style="color:red"/><br/>
+             <h:commandButton value="Mentés" action="#{kontaktLista.savePhone()}"/>
+             <h:commandButton value="Mégsem" action="index" immediate="true"/>
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,83 @@
+package pojos;
+// Generated 2021.04.24. 10:09:56 by Hibernate Tools 4.3.1
+
+
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="client"
+    ,catalog="webshop"
+)
+public class Client  implements java.io.Serializable {
+
+
+     private Integer id;
+     private String name;
+     private String email;
+     private Set<Order> orders = new HashSet<Order>(0);
+
+    public Client() {
+    }
+
+    public Client(String name, String email, Set<Order> orders) {
+       this.name = name;
+       this.email = email;
+       this.orders = orders;
+    }
+   
+     @Id @GeneratedValue(strategy=IDENTITY)
+
+    
+    @Column(name="id", unique=true, nullable=false)
+    public Integer getId() {
+        return this.id;
+    }
+    
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    
+    @Column(name="name", length=65)
+    public String getName() {
+        return this.name;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    
+    @Column(name="email", length=65)
+    public String getEmail() {
+        return this.email;
+    }
+    
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+@OneToMany(fetch=FetchType.LAZY, mappedBy="client")
+    public Set<Order> getOrders() {
+        return this.orders;
+    }
+    
+    public void setOrders(Set<Order> orders) {
+        this.orders = orders;
+    }
+
+
+
+
+}
+
+

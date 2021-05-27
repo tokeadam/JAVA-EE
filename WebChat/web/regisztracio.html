@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style/mystyle.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <h1>Regisztrációs oldal a chatprogramhoz</h1>
+
+        <img src="images/javaee.png" alt="" width="150" /> <br/>
+       
+        <h3 id="reg">Regisztráció</h3>       
+        
+        <form action="register" method="POST">
+            <table>
+                <tr>  
+                    <td><label for="nev">Név: </label></td> <td><input id="nev" name="name" type="text"/></td>
+                </tr>
+                
+                <tr>  
+                    <td><label for="usernev">Felhasználó név: </label></td> <td><input id="usernev" name="username" type="text"/></td>
+                </tr>
+
+                <tr>
+                    <td>Jelszó:</td>  <td><input name="pass" type="password"/></td>                     
+                </tr>
+                
+                <tr>
+                    <td colspan="2"><input type="checkbox" value="true" name="agree" id="acc"/> <label for="acc">Elfogadom a regisztrációs szabályzatot. </label></td>                
+                </tr>
+               
+                <tr>
+                    <td colspan="2"> <input type="submit" value="Regisztrálok"/> </td>
+                </tr>
+
+            </table>
+        </form>
+
+
+
+
+
+
+    </body>
+</html>
